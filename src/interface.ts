@@ -16,7 +16,7 @@ interface Person {
 }
 
 // 类实现接口
-class User2 implements Person {
+class User21 implements Person {
   name = 'ts';
   address = 'china';
   say() {

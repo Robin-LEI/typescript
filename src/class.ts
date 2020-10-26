@@ -24,3 +24,4 @@ class MyTeacher extends Person {
 // 默认是public 访问类型修饰符，允许我在类的内外访问
 // private 允许在类的内部使用
 // protected 允许在类内核继承的子类中使用
+// public readonly name: string;
