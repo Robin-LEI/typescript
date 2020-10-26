@@ -2,7 +2,7 @@
 
 1. npm install -g typescript
 2. 实时编译：terminal---->>RunTask--->>会出现两个选择，选择 tsc:watch - tsconfig.json
-3. tsconfig.json 为配置文件，所在的目录为根目录，更多配置[点击官网](https://www.tslang.cn/docs/handbook/tsconfig-json.html)
+3. tsc --init 生成tsconfig.json文件，tsconfig.json 为配置文件，所在的目录为根目录，更多配置[点击官网](https://www.tslang.cn/docs/handbook/tsconfig-json.html)
 4. 1. ts 代码不能直接在浏览器和 node 环境下直接运行的，需要先进行 tsc 编译，要想在 node 环境下直接运行 ts 代码，可以安装一个工具 ts-node， ts-node demo.ts
 
 # 如遇到如下报错：

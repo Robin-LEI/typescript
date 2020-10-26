@@ -2,6 +2,6 @@
   "compilerOptions": {
     "outDir": "./dist"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "dist/class.js"],
   "exclude": []
 }
