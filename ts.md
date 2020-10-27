@@ -30,6 +30,15 @@
 6. strict: true
 7. noImplicitAny: true 如果是 any 类型也必须写上
 8. strictNullChecks: false 不强制对 null 进行校验，此时 null 也可以赋值给字符串类型
+9. "rootDir": "./src"
+10. "outDir": "./build"
+11. "incremental": true，增量编译，已经编译过的不在编译
+12. target: es5，编译成 ts5
+13. allowJs: true，es6 的 js 代码也可以编译成 es5 的
+14. checkJs: true，对 js 语法进行检测
+15. sourceMap: true，生成 sourceMap 文件
+16. noUnusedLocals: true，对于那些没有使用的变量报错
+17. noUnusedParameters: true，对于函数没有使用的参数报错，对函数参数进行校验
 
 # 如遇到如下报错：
 
