@@ -1,0 +1,24 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "superagent 请求接口\r cheerio 分析 html",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node ./src/**/*.ts",
+    "build": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robin-LEI/typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Robin-LEI/typescript/issues"
+  },
+  "homepage": "https://github.com/Robin-LEI/typescript#readme",
+  "devDependencies": {
+    "ts-node": "^9.0.0"
+  }
+}

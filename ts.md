@@ -2,8 +2,34 @@
 
 1. npm install -g typescript
 2. 实时编译：terminal---->>RunTask--->>会出现两个选择，选择 tsc:watch - tsconfig.json
-3. tsc --init 生成tsconfig.json文件，tsconfig.json 为配置文件，所在的目录为根目录，更多配置[点击官网](https://www.tslang.cn/docs/handbook/tsconfig-json.html)
+3. tsc --init 生成 tsconfig.json 文件，tsconfig.json 为配置文件，所在的目录为根目录，更多配置[点击官网](https://www.tslang.cn/docs/handbook/tsconfig-json.html)
 4. 1. ts 代码不能直接在浏览器和 node 环境下直接运行的，需要先进行 tsc 编译，要想在 node 环境下直接运行 ts 代码，可以安装一个工具 ts-node， ts-node demo.ts
+
+# 编译
+
+1. "build": "tsc -w" 实时编译
+2. 实时运行编译后的文件，"start": "nodemon node ./build/crowller.js"
+3. 在 package.json 文件进行 nodemon 配置， "nodemonConfig": {"ignore": ["data/*"]}，忽略 data 下面的变化导致的重新运行，nodemon 默认不支持监听 ts 的变化
+4. 安装 concurrently，同时运行多个代码
+
+```json
+"scripts": {
+  "dev:build": "tsc -w",
+  "dev:start": "nodemon node ./build/crowller.js",
+  "dev": "concurrently npm:dev:*" // 等价于 concurrently npm run dev:build & npm run dev:start
+}
+```
+
+# 配置文件 tsconfig.json
+
+1. 直接执行 tsc 命令，后面不跟任何参数的时候，才会走 tsconfig.json 文件，否则不走该文件
+2. include 指定编译文件
+3. exclude 排除那些不需要编译的文件
+4. files: []，会编译那些写在该数组的文件
+5. removeComments: true 去除注释
+6. strict: true
+7. noImplicitAny: true 如果是 any 类型也必须写上
+8. strictNullChecks: false 不强制对 null 进行校验，此时 null 也可以赋值给字符串类型
 
 # 如遇到如下报错：
 
