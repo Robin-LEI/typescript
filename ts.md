@@ -39,6 +39,20 @@
 15. sourceMap: true，生成 sourceMap 文件
 16. noUnusedLocals: true，对于那些没有使用的变量报错
 17. noUnusedParameters: true，对于函数没有使用的参数报错，对函数参数进行校验
+18. outFile:
+
+# ts 中的模块化
+
+```js
+namespace Home {
+  // 不想暴露出去的模块
+  class Header {}
+  class Content {}
+  class Footer {}
+  // 需要暴露出去的模块
+  export class Page {}
+}
+```
 
 # 如遇到如下报错：
 
