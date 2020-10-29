@@ -39,9 +39,9 @@
 15. sourceMap: true，生成 sourceMap 文件
 16. noUnusedLocals: true，对于那些没有使用的变量报错
 17. noUnusedParameters: true，对于函数没有使用的参数报错，对函数参数进行校验
-18. outFile:
+18. outFile: "./build/page.js" 但是不支持 commonjs 规范，支持 amd 规范，把所有文件全部打包到这一个文件
 
-# ts 中的模块化
+# ts 中的模块化-namespace
 
 ```js
 namespace Home {
@@ -53,6 +53,68 @@ namespace Home {
   export class Page {}
 }
 ```
+
+# namespace 之间的引用
+
+```ts
+// page.ts
+///<reference path='./components.ts' />
+namespace Home {
+  export class Page {
+    user: Components.User = {
+      name: "ts",
+    };
+    constructor() {
+      new Components.Header();
+      new Components.Content();
+      new Components.Footer();
+    }
+  }
+}
+
+// components.ts
+namespace Components {
+  export namespace SubComponents {
+    export class Test {}
+  }
+  export interface User {
+    name: string;
+  }
+  export class Header {
+    constructor() {}
+  }
+  export class Content {
+    constructor() {}
+  }
+  export class Footer {
+    constructor() {}
+  }
+}
+```
+
+# import 模块化
+
+```ts
+import { Header, Content, Footer } from "./components";
+export default class Page {
+  constructor() {
+    new Header();
+    new Content();
+    new Footer();
+  }
+}
+// 在index.html中需要引入requirejs解析define amd规范
+require([
+  "page",
+  function (page) {
+    new page.default();
+  },
+]);
+```
+
+# parcel
+
+# 描述文件中的全局类型
 
 # 如遇到如下报错：
 

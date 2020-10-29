@@ -1,0 +1,17 @@
+{
+  "name": "parcel-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc",
+    "parcel": "parcel ./src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "parcel": "^2.0.0-beta.1"
+  }
+}
